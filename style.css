@@ -1,0 +1,557 @@
+/* =========================
+   BASE
+========================= */
+
+:root {
+    --text: #242424;
+    --muted: #666666;
+    --light-muted: #888888;
+    --border: #dedede;
+    --soft-background: #f7f7f5;
+    --white: #ffffff;
+    --max-width: 940px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    margin: 0;
+    background: var(--white);
+    color: var(--text);
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid transparent;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.site-nav.scrolled {
+    border-bottom-color: var(--border);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+.nav-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 16px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.nav-name {
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.nav-links a {
+    color: #444;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.84rem;
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+    color: #000;
+}
+
+
+/* =========================
+   PAGE LAYOUT
+========================= */
+
+.page-container {
+    width: calc(100% - 40px);
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+
+    padding: 70px 0 35px;
+}
+
+.profile-wrapper {
+    flex: 0 0 auto;
+}
+
+.profile-photo {
+    display: block;
+
+    width: 155px;
+    height: 155px;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 50%;
+}
+
+.hero-content h1 {
+    margin: 0 0 5px;
+
+    color: #111;
+    font-size: clamp(2.5rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.hero-title {
+    margin: 8px 0 0;
+
+    font-size: 1.25rem;
+    line-height: 1.4;
+}
+
+.hero-subtitle {
+    margin: 2px 0 16px;
+
+    font-size: 1.1rem;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+
+    margin-top: 15px;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 7px 14px;
+
+    background: var(--white);
+    border: 1px solid #cfcfcf;
+    border-radius: 6px;
+
+    color: #222;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9rem;
+    text-decoration: none;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.button:hover,
+.button:focus {
+    background: var(--soft-background);
+    border-color: #999;
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   INTRODUCTION
+========================= */
+
+.intro {
+    max-width: 830px;
+    padding: 10px 0 35px;
+}
+
+.intro p {
+    margin: 0;
+
+    font-size: 1.13rem;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
+.content-section {
+    padding: 35px 0;
+}
+
+.content-section h2,
+.contact-section h2 {
+    margin: 0;
+
+    color: #303030;
+    font-size: 1.65rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+}
+
+.section-line {
+    width: 100%;
+    height: 1px;
+
+    margin: 8px 0 0;
+
+    background: var(--border);
+}
+
+
+/* =========================
+   EXPERIENCE / EDUCATION
+========================= */
+
+.entry {
+    position: relative;
+
+    margin-top: 20px;
+    padding: 0 0 27px 17px;
+
+    border-left: 2px solid #e5e5e5;
+}
+
+.entry:not(:last-child) {
+    border-bottom: 1px solid #eeeeee;
+}
+
+.entry-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.entry h3 {
+    margin: 0;
+
+    color: #202020;
+    font-size: 1.18rem;
+    line-height: 1.4;
+}
+
+.date {
+    flex: 0 0 auto;
+
+    color: var(--muted);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+
+.organization {
+    margin: 4px 0 0;
+
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.location {
+    margin: 0;
+
+    color: var(--muted);
+    font-size: 0.93rem;
+    font-style: italic;
+}
+
+.entry ul {
+    margin: 12px 0 0;
+    padding-left: 20px;
+}
+
+.entry li {
+    margin-bottom: 5px;
+}
+
+.education-entry p {
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+.education-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 30px;
+
+    margin-top: 12px;
+}
+
+.education-details p {
+    margin: 0;
+}
+
+.coursework {
+    max-width: 800px;
+}
+
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+
+    margin-top: 22px;
+}
+
+.skill-category {
+    padding: 20px;
+
+    background: #fafafa;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+}
+
+.skill-category h3 {
+    margin: 0 0 15px;
+
+    font-size: 1.05rem;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.skill-tags span {
+    display: inline-block;
+
+    padding: 5px 9px;
+
+    background: var(--white);
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.77rem;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-section {
+    margin-top: 20px;
+    padding: 40px 0 65px;
+
+    border-top: 1px solid var(--border);
+}
+
+.contact-section p {
+    margin: 12px 0 0;
+
+    font-size: 1.05rem;
+}
+
+.contact-buttons {
+    margin-top: 18px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 22px 20px;
+
+    border-top: 1px solid #eeeeee;
+
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+
+    color: var(--light-muted);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.75rem;
+}
+
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+a:focus-visible {
+    outline: 3px solid #555;
+    outline-offset: 3px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 850px) {
+
+    .nav-inner {
+        width: calc(100% - 40px);
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+    html {
+        scroll-padding-top: 70px;
+    }
+
+    .site-nav {
+        position: relative;
+    }
+
+    .nav-inner {
+        width: calc(100% - 30px);
+        padding: 14px 0;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .page-container {
+        width: calc(100% - 34px);
+    }
+
+    .hero {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 22px;
+
+        padding-top: 45px;
+    }
+
+    .profile-photo {
+        width: 135px;
+        height: 135px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.45rem;
+    }
+
+    .hero-title {
+        font-size: 1.12rem;
+    }
+
+    .intro p {
+        font-size: 1.04rem;
+    }
+
+    .content-section h2,
+    .contact-section h2 {
+        font-size: 1.4rem;
+    }
+
+    .entry-heading {
+        display: block;
+    }
+
+    .date {
+        display: block;
+        margin-top: 4px;
+
+        white-space: normal;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 400px) {
+
+    .hero-content h1 {
+        font-size: 2.15rem;
+    }
+
+    .button {
+        padding: 7px 12px;
+    }
+
+    .entry {
+        padding-left: 13px;
+    }
+
+}
+
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+    }
+
+}
